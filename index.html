@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Escape Pac-Man</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fonte arcade -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <button onclick="mostrarTela('cadastro')">Cadastro</button>
+    <button onclick="mostrarTela('pontuacao')">Pontuação</button>
+    <button onclick="mostrarTela('ranking')">Ranking</button>
+    <button onclick="mostrarTela('premios')">Prêmios</button>
+  </nav>
+
+  <!-- Telas -->
+  <main>
+    <section id="cadastro" class="tela ativa">
+      <h1>Cadastro de Grupos</h1>
+      <input type="text" id="nomeJogador" placeholder="Nome do jogador">
+      <button onclick="adicionarJogador()">Adicionar</button>
+      <div id="listaJogadores"></div>
+    </section>
+
+    <section id="pontuacao" class="tela">
+      <h1>Registro de Pontuação</h1>
+      <div id="itens">
+        <button onclick="adicionarPontos(7)">🍒 (+7)</button>
+        <button onclick="adicionarPontos(10)">🍓 (+10)</button>
+        <button onclick="adicionarPontos(2)">👻 (+2)</button>
+        <button onclick="adicionarPontos(5)">🔵 (+5)</button>
+      </div>
+      <h2>Pontuação: <span id="pontuacaoTotal">0</span></h2>
+    </section>
+
+    <section id="ranking" class="tela">
+      <h1>Ranking</h1>
+      <ul id="listaRanking"></ul>
+      <img src="assets/images/pac-man.gif" class="sprite">
+      <img src="assets/images/ghost-red.gif" class="sprite">
+    </section>
+
+    <section id="premios" class="tela">
+      <h1>Controle de Prêmios</h1>
+      <img src="assets/images/fruit.png" class="fruta">
+      <h2>Restantes: <span id="premiosRestantes">3</span></h2>
+      <button onclick="entregarPremio()">Entregar Prêmio</button>
+      <div id="gameOver" class="oculto">GAME OVER</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
